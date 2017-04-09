@@ -1,0 +1,3 @@
+[submodule "edgeextension/manifest/Extension"]
+	path = edgeextension/manifest/Extension
+	url = https://github.com/ZhaobangChina/electsys.git
