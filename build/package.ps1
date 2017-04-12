@@ -7,6 +7,8 @@ else
     $rootPath = $env:APPVEYOR_BUILD_FOLDER
 }
 
+git submodule update --initial --recursive $rootPath
+
 $manifest = [System.IO.Path]::Combine($rootPath, "edgeextension\manifest")
 $key = [System.IO.Path]::Combine($rootPath, "Electsys_StoreKey.pfx")
 $appx = [System.IO.Path]::Combine($rootPath, "edgeextension\package\edgeExtension.appx")
