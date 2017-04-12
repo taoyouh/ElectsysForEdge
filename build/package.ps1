@@ -8,7 +8,7 @@ else
 }
 
 Set-Location $rootPath
-git submodule update --initial --recursive
+git submodule update --init --recursive
 
 $manifest = [System.IO.Path]::Combine($rootPath, "edgeextension\manifest")
 $key = [System.IO.Path]::Combine($rootPath, "Electsys_StoreKey.pfx")
