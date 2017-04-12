@@ -4,9 +4,16 @@ branches:
   - master
 build_script:
 - ps: >-
-    .\Build\InstallManifoldjs.ps1
-    
-    .\Build\Package.ps1
+    try
+    {
+        .\Build\InstallManifoldjs.ps1
+        .\Build\Package.ps1
+    }
+    catch
+    {
+        Add-AppveyorCompilationMessage $Error[0] -Category Error
+        Throw $Error[0]
+    }
 artifacts:
 - path: edgeextension\package
   name: Package
