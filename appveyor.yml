@@ -1,4 +1,7 @@
-version: 1.0.{build}
+version: Build {build}
+branches:
+  only:
+  - master
 build_script:
 - ps: >-
     .\Build\InstallManifoldjs.ps1
